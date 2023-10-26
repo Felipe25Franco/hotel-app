@@ -22,6 +22,7 @@ import CadastroQuarto from './views/cadastros/cadastro-quarto';
 import CadastroComodidades from './views/cadastros/cadastro-comodidades';
 import CadastroReserva from './views/cadastros/cadastro-reserva';
 import CadastroHospedagem from './views/cadastros/cadastro-hospedagem';
+
 import CadastroHorarioServico from './views/cadastros/subCadastros/cadastro-horarioServico';
 import CadastroAvaliacaoQuarto from './views/cadastros/subCadastros/cadastro-avaliacaoQuarto';
 import CadastroAvaliacaoHospedagem from './views/cadastros/subCadastros/cadastro-avaliacaoHospedagem';
