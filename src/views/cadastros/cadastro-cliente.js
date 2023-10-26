@@ -15,7 +15,7 @@ import axios from 'axios';
 import { BASE_URL } from '../../config/axios';
 
 function CadastroCliente() {
-  
+
   const { idParam } = useParams();
 
   const navigate = useNavigate();
@@ -42,19 +42,21 @@ function CadastroCliente() {
 
   //ESSA é A PARTE DO BOTAO EDITAR
   const [dados, setDados] = React.useState([]);
-  
+
   async function buscar() {
-    await axios.get(`${baseURL}/${idParam}`).then((response) => {
-      setDados(response.data);
-    });
-    setId(dados.id);
-    setVar0(dados.cpf);
-    setVar1(dados.nome);
-    setVar2(dados.dataNacimento);
-    setVar11(dados.email);
-    setVar12(dados.senha);
-    setVar13(dados.senha);
-    setVar14('');
+    if (idParam != null) {
+      await axios.get(`${baseURL}/${idParam}`).then((response) => {
+        setDados(response.data);
+      });
+      setId(dados.id);
+      setVar0(dados.cpf);
+      setVar1(dados.nome);
+      setVar2(dados.dataNacimento);
+      setVar11(dados.email);
+      setVar12(dados.senha);
+      setVar13(dados.senha);
+      setVar14('');
+    }
   }
 
   const [dados2, setDados2] = React.useState(null); //end
@@ -93,7 +95,7 @@ function CadastroCliente() {
   }, []);
 
   useEffect(() => {
-      buscar(); // eslint-disable-next-line
+    buscar(); // eslint-disable-next-line
   }, [id]);
 
   if (!dados) return null;
@@ -107,17 +109,17 @@ function CadastroCliente() {
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
-            <FormGroup label='CPF: *' htmlFor='inputCPF'>
-              <input
-                type='number'
-                id='inputCPF'
-                value={var0}
-                className='form-control'
-                name='cpf'
-                onChange={(e) => setVar0(e.target.value)}
-              />
-            </FormGroup>
-            <FormGroup label='Nome: *' htmlFor='inputNome'>
+              <FormGroup label='CPF: *' htmlFor='inputCPF'>
+                <input
+                  type='number'
+                  id='inputCPF'
+                  value={var0}
+                  className='form-control'
+                  name='cpf'
+                  onChange={(e) => setVar0(e.target.value)}
+                />
+              </FormGroup>
+              <FormGroup label='Nome: *' htmlFor='inputNome'>
                 <input
                   type='text'
                   id='inputNome'
@@ -127,7 +129,7 @@ function CadastroCliente() {
                   onChange={(e) => setVar1(e.target.value)}
                 />
               </FormGroup>
-            <FormGroup label='DataNascimento: *' htmlFor='inputDataNascimento'>
+              <FormGroup label='DataNascimento: *' htmlFor='inputDataNascimento'>
                 <input
                   type='date'
                   id='inputDataNascimento'
@@ -137,7 +139,7 @@ function CadastroCliente() {
                   onChange={(e) => setVar2(e.target.value)}
                 />
               </FormGroup>
-            <FormGroup label='Email: *' htmlFor='inputEmail'>
+              <FormGroup label='Email: *' htmlFor='inputEmail'>
                 <input
                   type='email'
                   id='inputEmail'
@@ -147,7 +149,7 @@ function CadastroCliente() {
                   onChange={(e) => setVar11(e.target.value)}
                 />
               </FormGroup>
-            <FormGroup label='Senha1: *' htmlFor='inputSenha1'>
+              <FormGroup label='Senha1: *' htmlFor='inputSenha1'>
                 <input
                   type='password'
                   id='inputSenha1'
@@ -157,7 +159,7 @@ function CadastroCliente() {
                   onChange={(e) => setVar12(e.target.value)}
                 />
               </FormGroup>
-            <FormGroup label='Senha2: *' htmlFor='inputSenha2'>
+              <FormGroup label='Senha2: *' htmlFor='inputSenha2'>
                 <input
                   type='password'
                   id='inputSenha2'
@@ -252,7 +254,7 @@ function CadastroCliente() {
                   name='complemento'
                   onChange={(e) => setVar8(e.target.value)}
                 />
-                </FormGroup>
+              </FormGroup>
               <FormGroup label='Logradouro: *' htmlFor='inputLogradouro'>
                 <input
                   type='text'
@@ -262,7 +264,7 @@ function CadastroCliente() {
                   name='logradouro'
                   onChange={(e) => setVar9(e.target.value)}
                 />
-                </FormGroup>
+              </FormGroup>
               <FormGroup label='Bairro: *' htmlFor='inputBairro'>
                 <input
                   type='text'
@@ -272,7 +274,7 @@ function CadastroCliente() {
                   name='bairro'
                   onChange={(e) => setVar10(e.target.value)}
                 />
-                </FormGroup>
+              </FormGroup>
 
 
               <br></br>
