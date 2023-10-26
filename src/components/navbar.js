@@ -23,31 +23,34 @@ function Navbar(props) {
                 </button>
                 <div className='collapse navbar-collapse' id='navbarResponsive'>
                     <ul className='navbar-nav'>
-                        <NavbarItem render='true' href='/listagem-cliente' label='Clientes'/>
+                        <NavbarItem render='true' href='/login' label='Login' />
                     </ul>
                     <ul className='navbar-nav'>
-                        <NavbarItem render='true' href='/listagem-comodidades' label='Comodidades'/>
+                        <NavbarItem render='true' href='/listagem-cliente' label='Clientes' />
                     </ul>
                     <ul className='navbar-nav'>
-                        <NavbarItem render='true' href='/listagem-funcionario' label='Funcionario'/>
+                        <NavbarItem render='true' href='/listagem-comodidades' label='Comodidades' />
                     </ul>
                     <ul className='navbar-nav'>
-                        <NavbarItem render='true' href='/listagem-hospedagem' label='Hospedagem'/>
+                        <NavbarItem render='true' href='/listagem-funcionarios' label='Funcionarios' />
                     </ul>
                     <ul className='navbar-nav'>
-                        <NavbarItem render='true' href='/listagem-hoteis' label='Hoteis'/>
+                        <NavbarItem render='true' href='/listagem-hospedagem' label='Hospedagem' />
                     </ul>
                     <ul className='navbar-nav'>
-                        <NavbarItem render='true' href='/listagem-produtos' label='Produtos'/>
+                        <NavbarItem render='true' href='/listagem-hoteis' label='Hoteis' />
                     </ul>
                     <ul className='navbar-nav'>
-                        <NavbarItem render='true' href='/listagem-quarto' label='Quartos'/>
+                        <NavbarItem render='true' href='/listagem-produtos' label='Produtos' />
                     </ul>
                     <ul className='navbar-nav'>
-                        <NavbarItem render='true' href='/listagem-reserva' label='Reservas'/>
+                        <NavbarItem render='true' href='/listagem-quarto' label='Quartos' />
                     </ul>
                     <ul className='navbar-nav'>
-                        <NavbarItem render='true' href='/listagem-servicos' label='Servicos'/>
+                        <NavbarItem render='true' href='/listagem-reserva' label='Reservas' />
+                    </ul>
+                    <ul className='navbar-nav'>
+                        <NavbarItem render='true' href='/listagem-servicos' label='Servicos' />
                     </ul>
                 </div>
             </div>

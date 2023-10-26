@@ -29,8 +29,7 @@ function Rotas(props) {
           <Route path='/listagem-produtos' element={<ListagemProdutos />} />
           <Route path='/listagem-quarto' element={<ListagemQuarto />} />
           <Route path='/listagem-reserva' element={<ListagemReserva />} />
-          <Route path='/listagem-servicos' element={<ListagemServicos />} />
-                   
+          <Route path='/listagem-servicos' element={<ListagemServicos />} />                   
         </Routes>
       </BrowserRouter>
     );
