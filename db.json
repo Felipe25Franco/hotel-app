@@ -37,7 +37,6 @@
             "endereco_id": 4
         }
     ],
-    
     "funcionario": [
         {
             "id": 1,
@@ -94,6 +93,38 @@
             "endereco_id": 4,
             "hotel_id": 1,
             "cargo_id": 1
+        }
+    ],
+    "comodidade": [
+        {
+            "id": 1,
+            "titulo": "ar condicionado",
+            "descricao": "xxxxxxxxxxx",
+            "tipoComodidade_id": 1
+        },
+        {
+            "id": 2,
+            "titulo": "elevador",
+            "descricao": "xxxxxxxxxxx",
+            "tipoComodidade_id": 2
+        },
+        {
+            "id": 3,
+            "titulo": "banheira hidro",
+            "descricao": "xxxxxxxxxxx",
+            "tipoComodidade_id": 3
+        },
+        {
+            "id": 4,
+            "titulo": "frigobar",
+            "descricao": "xxxxxxxxxxx",
+            "tipoComodidade_id": 1
+        },
+        {
+            "id": 4,
+            "titulo": "vista para o mar",
+            "descricao": "xxxxxxxxxxx",
+            "tipoComodidade_id": 2
         }
     ]
 }
