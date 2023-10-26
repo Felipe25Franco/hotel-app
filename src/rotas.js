@@ -12,6 +12,9 @@ import ListagemReserva from './views/listagens/listagem-reserva';
 import ListagemServicos from './views/listagens/listagem-servicos';
 
 
+import CadastroCliente from './views/cadastros/cadastro-cliente';
+
+
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 
@@ -29,7 +32,10 @@ function Rotas(props) {
           <Route path='/listagem-produtos' element={<ListagemProdutos />} />
           <Route path='/listagem-quarto' element={<ListagemQuarto />} />
           <Route path='/listagem-reserva' element={<ListagemReserva />} />
-          <Route path='/listagem-servicos' element={<ListagemServicos />} />                   
+          <Route path='/listagem-servicos' element={<ListagemServicos />} />    
+
+
+          <Route path='/cadastro-cliente/:idParam?' element={<CadastroCliente />} />               
         </Routes>
       </BrowserRouter>
     );
