@@ -1,10 +1,9 @@
 import React from 'react';
 
+import Card from '../components/card';
+import { mensagemSucesso, mensagemErro } from '../components/toastr';
 
-import Card from '../../components/card';
-import { mensagemSucesso, mensagemErro } from '../../components/toastr';
-
-import '../../custom.css';
+import '../custom.css';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -15,20 +14,20 @@ import EditIcon from '@mui/icons-material/Edit';
 
 import axios from 'axios';
 
-import { BASE_URL } from '../../config/axios';
+import { BASE_URL } from '../config/axios';
 
-const baseURL = `${BASE_URL}/cliente`;
+const baseURL = `${BASE_URL}/comodidade`;
 
 
-function ListagemCliente() {
+function ListagemComodidades() {
   const navigate = useNavigate();
 
   const cadastrar = () => {
-    navigate(`/cadastro-cliente`);
+    navigate(`/cadastro-comodidades`);
   };
 
   const editar = (id) => {
-    navigate(`/cadastro-cliente/${id}`);
+    navigate(`/cadastro-comodidades/${id}`);
   };
 
   const [dados, setDados] = React.useState(null);
@@ -42,7 +41,7 @@ function ListagemCliente() {
         headers: { 'Content-Type': 'application/json' },
       })
       .then(function (response) {
-        mensagemSucesso(`Cliente excluído com sucesso!`);
+        mensagemSucesso(`Comodidades excluídas com sucesso!`);
         setDados(
           dados.filter((dado) => {
             return dado.id !== id;
@@ -50,7 +49,7 @@ function ListagemCliente() {
         );
       })
       .catch(function (error) {
-        mensagemErro(`Erro ao excluir o Cliente`);
+        mensagemErro(`Erro ao excluir comodidade`);
       });
   }
 
@@ -64,7 +63,7 @@ function ListagemCliente() {
 
   return (
     <div className='container'>
-      <Card title='Listagem de Clientes'>
+      <Card title='Listagem comodidades'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
@@ -73,23 +72,23 @@ function ListagemCliente() {
                 className='btn btn-warning'
                 onClick={() => cadastrar()}
               >
-                Novo Cliente
+                Nova comodidade
               </button>
               <table className='table table-hover'>
                 <thead>
                   <tr>
                     <th scope='col'>Nome</th>
-                    <th scope='col'>Data de Nascimento</th>
-                    <th scope='col'>E-mail</th>
+                    <th scope='col'>Descrição</th>
+                    
                     <th scope='col'>Ações</th>
                   </tr>
                 </thead>
                 <tbody>
                   {dados.map((dado) => (
                     <tr key={dado.id}>
-                      <td>{dado.nome}</td>
-                      <td>{dado.dataNacimento}</td>
-                      <td>{dado.email}</td>
+                      <td>{dado.titulo}</td>
+                      <td>{dado.descricao}</td>
+                      
                       <td>
                         <Stack spacing={1} padding={0} direction='row'>
                           <IconButton
@@ -120,4 +119,4 @@ function ListagemCliente() {
 
 
 
-export default ListagemCliente;
+export default ListagemComodidades;

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Card from '../../components/card';
-import { mensagemSucesso, mensagemErro } from '../../components/toastr';
+import Card from '../components/card';
+import { mensagemSucesso, mensagemErro } from '../components/toastr';
 
-import '../../custom.css';
+import '../custom.css';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -14,20 +14,20 @@ import EditIcon from '@mui/icons-material/Edit';
 
 import axios from 'axios';
 
-import { BASE_URL } from '../../config/axios';
+import { BASE_URL } from '../config/axios';
 
-const baseURL = `${BASE_URL}/funcionario`;
+const baseURL = `${BASE_URL}/quarto`;
 
 
-function ListagemFuncionario() {
+function ListagemQuarto() {
   const navigate = useNavigate();
 
   const cadastrar = () => {
-    navigate(`/cadastro-funcionario`);
+    navigate(`/cadastro-quarto`);
   };
 
   const editar = (id) => {
-    navigate(`/cadastro-funcionario/${id}`);
+    navigate(`/cadastro-quarto/${id}`);
   };
 
   const [dados, setDados] = React.useState(null);
@@ -41,7 +41,7 @@ function ListagemFuncionario() {
         headers: { 'Content-Type': 'application/json' },
       })
       .then(function (response) {
-        mensagemSucesso(`funcionario excluído com sucesso!`);
+        mensagemSucesso(`Quarto excluído com sucesso!`);
         setDados(
           dados.filter((dado) => {
             return dado.id !== id;
@@ -49,7 +49,7 @@ function ListagemFuncionario() {
         );
       })
       .catch(function (error) {
-        mensagemErro(`Erro ao excluir o funcionario`);
+        mensagemErro(`Erro ao excluir o Quarto`);
       });
   }
 
@@ -63,7 +63,7 @@ function ListagemFuncionario() {
 
   return (
     <div className='container'>
-      <Card title='Listagem de funcionarios'>
+      <Card title='Listagem de Quartos'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
@@ -72,23 +72,27 @@ function ListagemFuncionario() {
                 className='btn btn-warning'
                 onClick={() => cadastrar()}
               >
-                Novo Funcionario
+                Novo Quarto
               </button>
               <table className='table table-hover'>
                 <thead>
                   <tr>
-                    <th scope='col'>Nome</th>
-                    <th scope='col'>Data de Nascimento</th>
-                    <th scope='col'>E-mail</th>
+                    <th scope='col'>ID Tipo de Quarto</th>
+                    <th scope='col'>Andar</th>
+                    <th scope='col'>Bloco</th>
+                    <th scope='col'>Numero</th>
+                    <th scope='col'>Status</th>
                     <th scope='col'>Ações</th>
                   </tr>
                 </thead>
                 <tbody>
                   {dados.map((dado) => (
                     <tr key={dado.id}>
-                      <td>{dado.nome}</td>
-                      <td>{dado.dataNacimento}</td>
-                      <td>{dado.email}</td>
+                      <td>{dado.tipo_quarto_id}</td>
+                      <td>{dado.andar}</td>
+                      <td>{dado.bloco}</td>
+                      <td>{dado.numero}</td>
+                      <td>{dado.status}</td>
                       <td>
                         <Stack spacing={1} padding={0} direction='row'>
                           <IconButton
@@ -119,4 +123,4 @@ function ListagemFuncionario() {
 
 
 
-export default ListagemFuncionario;
+export default ListagemQuarto;

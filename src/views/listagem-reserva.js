@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Card from '../../components/card';
-import { mensagemSucesso, mensagemErro } from '../../components/toastr';
+import Card from '../components/card';
+import { mensagemSucesso, mensagemErro } from '../components/toastr';
 
-import '../../custom.css';
+import '../custom.css';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -14,20 +14,20 @@ import EditIcon from '@mui/icons-material/Edit';
 
 import axios from 'axios';
 
-import { BASE_URL } from '../../config/axios';
+import { BASE_URL } from '../config/axios';
 
-const baseURL = `${BASE_URL}/hospedagem`;
+const baseURL = `${BASE_URL}/reserva`;
 
 
-function ListagemHospedagem() {
+function ListagemReserva() {
   const navigate = useNavigate();
 
   const cadastrar = () => {
-    navigate(`/cadastro-hospedagem`);
+    navigate(`/cadastro-reserva`);
   };
 
   const editar = (id) => {
-    navigate(`/cadastro-hospedagem/${id}`);
+    navigate(`/cadastro-reserva/${id}`);
   };
 
   const [dados, setDados] = React.useState(null);
@@ -41,7 +41,7 @@ function ListagemHospedagem() {
         headers: { 'Content-Type': 'application/json' },
       })
       .then(function (response) {
-        mensagemSucesso(`Hospedagem excluída com sucesso!`);
+        mensagemSucesso(`Reserva excluída com sucesso!`);
         setDados(
           dados.filter((dado) => {
             return dado.id !== id;
@@ -49,7 +49,7 @@ function ListagemHospedagem() {
         );
       })
       .catch(function (error) {
-        mensagemErro(`Erro ao excluir a Hospedagem`);
+        mensagemErro(`Erro ao excluir Reserva`);
       });
   }
 
@@ -63,7 +63,7 @@ function ListagemHospedagem() {
 
   return (
     <div className='container'>
-      <Card title='Listagem de Hospedagem'>
+      <Card title='Listagem de Reservas'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
@@ -72,31 +72,25 @@ function ListagemHospedagem() {
                 className='btn btn-warning'
                 onClick={() => cadastrar()}
               >
-                Nova Hospedagem
+                Nova Reserva
               </button>
               <table className='table table-hover'>
                 <thead>
                   <tr>
-                    <th scope='col'>ID</th>
                     <th scope='col'>Status</th>
                     <th scope='col'>Data de Inicio</th>
                     <th scope='col'>Data Final</th>
-                    <th scope='col'>Data Final Extendida</th>
                     <th scope='col'>Valor</th>
-                    <th scope='col'>Status de Pagamento Estadia</th>
                     <th scope='col'>Ações</th>
                   </tr>
                 </thead>
                 <tbody>
                   {dados.map((dado) => (
                     <tr key={dado.id}>
-                      <td>{dado.id}</td>
                       <td>{dado.status}</td>
-                      <td>{dado.dataInicio}</td>
-                      <td>{dado.dataFim1}</td>
-                      <td>{dado.dataFim2}</td>
-                      <td>{dado.valorEstadia}</td>
-                      <td>{dado.statusValorEstadia}</td>
+                      <td>{dado.datainicio}</td>
+                      <td>{dado.datafim}</td>
+                      <td>{dado.valorResrva}</td>
                       <td>
                         <Stack spacing={1} padding={0} direction='row'>
                           <IconButton
@@ -127,4 +121,4 @@ function ListagemHospedagem() {
 
 
 
-export default ListagemHospedagem;
+export default ListagemReserva;

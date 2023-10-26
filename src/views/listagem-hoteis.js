@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Card from '../../components/card';
-import { mensagemSucesso, mensagemErro } from '../../components/toastr';
+import Card from '../components/card';
+import { mensagemSucesso, mensagemErro } from '../components/toastr';
 
-import '../../custom.css';
+import '../custom.css';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -14,20 +14,20 @@ import EditIcon from '@mui/icons-material/Edit';
 
 import axios from 'axios';
 
-import { BASE_URL } from '../../config/axios';
+import { BASE_URL } from '../config/axios';
 
-const baseURL = `${BASE_URL}/produto`;
+const baseURL = `${BASE_URL}/hotel`;
 
 
-function ListagemProdutos() {
+function ListagemHoteis() {
   const navigate = useNavigate();
 
   const cadastrar = () => {
-    navigate(`/cadastro-produto`);
+    navigate(`/cadastro-hotel`);
   };
 
   const editar = (id) => {
-    navigate(`/cadastro-produto/${id}`);
+    navigate(`/cadastro-hotel/${id}`);
   };
 
   const [dados, setDados] = React.useState(null);
@@ -41,7 +41,7 @@ function ListagemProdutos() {
         headers: { 'Content-Type': 'application/json' },
       })
       .then(function (response) {
-        mensagemSucesso(`Produto excluído com sucesso!`);
+        mensagemSucesso(`Hotel excluído com sucesso!`);
         setDados(
           dados.filter((dado) => {
             return dado.id !== id;
@@ -49,7 +49,7 @@ function ListagemProdutos() {
         );
       })
       .catch(function (error) {
-        mensagemErro(`Erro ao excluir o produto`);
+        mensagemErro(`Erro ao excluir o Hotel`);
       });
   }
 
@@ -63,7 +63,7 @@ function ListagemProdutos() {
 
   return (
     <div className='container'>
-      <Card title='Listagem de Produtos'>
+      <Card title='Listagem de Hoteis'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
@@ -72,14 +72,14 @@ function ListagemProdutos() {
                 className='btn btn-warning'
                 onClick={() => cadastrar()}
               >
-                Novo Produto
+                Novo Hotel
               </button>
               <table className='table table-hover'>
                 <thead>
                   <tr>
                     <th scope='col'>Nome</th>
                     <th scope='col'>Descrição</th>
-                    <th scope='col'>Preço</th>
+                    <th scope='col'>Avaliação</th>
                     <th scope='col'>Ações</th>
                   </tr>
                 </thead>
@@ -88,7 +88,7 @@ function ListagemProdutos() {
                     <tr key={dado.id}>
                       <td>{dado.titulo}</td>
                       <td>{dado.descricao}</td>
-                      <td>{dado.preco}</td>
+                      <td>{dado.avaliacaoMedia}</td>
                       <td>
                         <Stack spacing={1} padding={0} direction='row'>
                           <IconButton
@@ -119,4 +119,4 @@ function ListagemProdutos() {
 
 
 
-export default ListagemProdutos;
+export default ListagemHoteis;
