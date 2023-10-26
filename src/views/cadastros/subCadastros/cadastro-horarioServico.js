@@ -3,24 +3,24 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import Stack from '@mui/material/Stack';
 
-import Card from '../../components/card';
+import Card from '../../../components/card';
 
-import FormGroup from '../../components/form-group';
+import FormGroup from '../../../components/form-group';
 
-import { mensagemSucesso, mensagemErro } from '../../components/toastr';
+import { mensagemSucesso, mensagemErro } from '../../../components/toastr';
 
 import '../../custom.css';
 
 import axios from 'axios';
-import { BASE_URL } from '../../config/axios';
+import { BASE_URL } from '../../../config/axios';
 
-function CadastroTipoQuarto() {
+function CadastroHorarioServico() {
   
   const { idParam } = useParams();
 
   const navigate = useNavigate();
 
-  const baseURL = `${BASE_URL}/tipoQuarto`;
+  const baseURL = `${BASE_URL}/horarioServico`;
 
   const [id, setId] = useState('');
   const [var1, setVar1] = useState('');
@@ -28,88 +28,64 @@ function CadastroTipoQuarto() {
   const [var3, setVar3] = useState('');
   const [var4, setVar4] = useState('');
   const [var5, setVar5] = useState('');
-  const [var6, setVar6] = useState('');
-  const [var7, setVar7] = useState('');
-
-  const [dados, setDados] = React.useState([]);
 
   return (
     <div className='container'>
-      <Card title='Cadastro de Tipos de Quartos'>
+      <Card title='Cadastro de Horários de Serviço'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
-              <FormGroup label='Titulo: *' htmlFor='inputTitulo'>
+              <FormGroup label='Status: *' htmlFor='inputStatus'>
                 <input
                   type='text'
-                  id='inputTitulo'
+                  id='inputStatus'
                   value={var1}
                   className='form-control'
-                  name='titulo'
+                  name='status'
                   onChange={(e) => setVar1(e.target.value)}
                 />
               </FormGroup>
-              <FormGroup label='Descricao: *' htmlFor='inputDescricao'>
+              <FormGroup label='Vagas Totais: *' htmlFor='inputVagaTotal'>
                 <input
                   type='text'
-                  id='inputDescricao'
+                  id='inputVagaTotal'
                   value={var2}
                   className='form-control'
-                  name='descricao'
+                  name='vagatotal'
                   onChange={(e) => setVar2(e.target.value)}
                 />
               </FormGroup>
-              <FormGroup label='LimiteAdulto: *' htmlFor='inputLimiteAdulto'>
+              <FormGroup label='Hora Início: *' htmlFor='inputHoraInicio'>
                 <input
                   type='text'
-                  id='inputLimiteAdulto'
+                  id='inputHoraInicio'
                   value={var3}
                   className='form-control'
-                  name='limiteadulto'
+                  name='horainicio'
                   onChange={(e) => setVar3(e.target.value)}
                 />
               </FormGroup>
-              <FormGroup label='LimiteCrianca: *' htmlFor='inputLimiteCrianca'>
+              <FormGroup label='Hora Fim: *' htmlFor='inputHoraFim'>
                 <input
                   type='text'
-                  id='inputLimiteCrianca'
+                  id='inputHoraFim'
                   value={var4}
                   className='form-control'
-                  name='limitecrianca'
+                  name='horafim'
                   onChange={(e) => setVar4(e.target.value)}
                 />
               </FormGroup>
-              <FormGroup label='PrecoBase: *' htmlFor='inputPrecoBase'>
+              <FormGroup label='Data: *' htmlFor='inputData'>
                 <input
                   type='text'
-                  id='inputPrecoBase'
+                  id='inputData'
                   value={var5}
                   className='form-control'
-                  name='precobase'
+                  name='data'
                   onChange={(e) => setVar5(e.target.value)}
                 />
               </FormGroup>
-              <FormGroup label='DiasCancelarReserva: *' htmlFor='inputDiasCancelarReserva'>
-                <input
-                  type='text'
-                  id='inputDiasCancelarReserva'
-                  value={var6}
-                  className='form-control'
-                  name='diascancelarreserva'
-                  onChange={(e) => setVar6(e.target.value)}
-                />
-              </FormGroup>
-              <FormGroup label='Area: *' htmlFor='inputArea'>
-                <input
-                  type='text'
-                  id='inputArea'
-                  value={var7}
-                  className='form-control'
-                  name='area'
-                  onChange={(e) => setVar7(e.target.value)}
-                />
-              </FormGroup>
-              
+
               <br></br>
               <Stack spacing={1} padding={1} direction='row'>
                 <button
@@ -133,4 +109,4 @@ function CadastroTipoQuarto() {
   );
 }
 
-export default CadastroTipoQuarto;
+export default CadastroHorarioServico;

@@ -3,24 +3,24 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import Stack from '@mui/material/Stack';
 
-import Card from '../../components/card';
+import Card from '../../../components/card';
 
-import FormGroup from '../../components/form-group';
+import FormGroup from '../../../components/form-group';
 
-import { mensagemSucesso, mensagemErro } from '../../components/toastr';
+import { mensagemSucesso, mensagemErro } from '../../../components/toastr';
 
 import '../../custom.css';
 
 import axios from 'axios';
-import { BASE_URL } from '../../config/axios';
+import { BASE_URL } from '../../../config/axios';
 
-function CadastroTipoServico() {
+function CadastroTipoProduto() {
   
   const { idParam } = useParams();
 
   const navigate = useNavigate();
 
-  const baseURL = `${BASE_URL}/tipoServico`;
+  const baseURL = `${BASE_URL}/tipoProduto`;
 
   const [id, setId] = useState('');
   const [var0, setVar0] = useState('');
@@ -32,7 +32,7 @@ function CadastroTipoServico() {
 
   return (
     <div className='container'>
-      <Card title='Cadastro de TIpo de Serviços'>
+      <Card title='Cadastro de Categoria de Produtos'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
@@ -80,4 +80,4 @@ function CadastroTipoServico() {
   );
 }
 
-export default CadastroTipoServico;
+export default CadastroTipoProduto;
