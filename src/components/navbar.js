@@ -23,11 +23,10 @@ function Navbar(props) {
                 </button>
                 <div className='collapse navbar-collapse' id='navbarResponsive'>
                     <ul className='navbar-nav'>
-                        <NavbarItem
-                            render='true'
-                            href='/listagem-cliente'
-                            label='Clientes'
-                        />
+                        <NavbarItem render='true' href='/listagem-cliente' label='Clientes'/>
+                    </ul>
+                    <ul className='navbar-nav'>
+                        <NavbarItem render='true' href='/listagem-comodidades' label='Comodidades'/>
                     </ul>
                 </div>
             </div>
