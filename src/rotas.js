@@ -13,18 +13,18 @@ import ListagemQuarto from './views/listagens/listagem-quarto';
 import ListagemHospedagem from './views/listagens/listagem-hospedagem';
 import ListagemReserva from './views/listagens/listagem-reserva';
 
-import CadastroProduto from './views/cadastro-produto';
-import CadastroHotel from './views/cadastro-hotel';
-import CadastroCliente from './views/cadastro-cliente';
-import CadastroFuncionario from './views/cadastro-funcionario';
-import CadastroServicos from './views/cadastro-servicos';
-import CadastroQuarto from './views/cadastro-quarto';
-import CadastroComodidades from './views/cadastro-comodidades';
-import CadastroReserva from './views/cadastro-reserva';
-import CadastroHospedagem from './views/cadastro-hospedagem';
-import CadastroHorarioServico from './views/cadastro-horarioServico';
-import CadastroAvaliacaoQuarto from './views/cadastro-avaliacaoQuarto';
-import CadastroAvaliacaoHospedagem from './views/cadastro-avaliacaoHospedagem';
+import CadastroProduto from './views/cadastros/cadastro-produto';
+import CadastroHotel from './views/cadastros/cadastro-hotel';
+import CadastroCliente from './views/cadastros/cadastro-cliente';
+import CadastroFuncionario from './views/cadastros/cadastro-funcionario';
+import CadastroServicos from './views/cadastros/cadastro-servicos';
+import CadastroQuarto from './views/cadastros/cadastro-quarto';
+import CadastroComodidades from './views/cadastros/cadastro-comodidades';
+import CadastroReserva from './views/cadastros/cadastro-reserva';
+import CadastroHospedagem from './views/cadastros/cadastro-hospedagem';
+import CadastroHorarioServico from './views/cadastros/cadastro-horarioServico';
+import CadastroAvaliacaoQuarto from './views/cadastros/cadastro-avaliacaoQuarto';
+import CadastroAvaliacaoHospedagem from './views/cadastros/cadastro-avaliacaoHospedagem';
 
 
 
