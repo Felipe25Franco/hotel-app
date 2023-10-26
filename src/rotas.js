@@ -3,15 +3,15 @@ import React from 'react';
 import Login from './views/login';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
-import ListagemCliente from './views/listagem-cliente';
-import ListagemFuncionario from './views/listagem-funcionario';
-import ListagemHoteis from './views/listagem-hoteis';
-import ListagemProdutos from './views/listagem-produtos';
-import ListagemServicos from './views/listagem-servicos';
-import ListagemComodidades from './views/listagem-comodidades';
-import ListagemQuarto from './views/listagem-quarto';
-import ListagemHospedagem from './views/listagem-hospedagem';
-import ListagemReserva from './views/listagem-reserva';
+import ListagemCliente from './views/listagens/listagem-cliente';
+import ListagemFuncionario from './views/listagens/listagem-funcionario';
+import ListagemHoteis from './views/listagens/listagem-hoteis';
+import ListagemProdutos from './views/listagens/listagem-produtos';
+import ListagemServicos from './views/listagens/listagem-servicos';
+import ListagemComodidades from './views/listagens/listagem-comodidades';
+import ListagemQuarto from './views/listagens/listagem-quarto';
+import ListagemHospedagem from './views/listagens/listagem-hospedagem';
+import ListagemReserva from './views/listagens/listagem-reserva';
 
 import CadastroProduto from './views/cadastro-produto';
 import CadastroHotel from './views/cadastro-hotel';
@@ -25,7 +25,7 @@ import CadastroHospedagem from './views/cadastro-hospedagem';
 import CadastroHorarioServico from './views/cadastro-horarioServico';
 import CadastroAvaliacaoQuarto from './views/cadastro-avaliacaoQuarto';
 import CadastroAvaliacaoHospedagem from './views/cadastro-avaliacaoHospedagem';
-{/**/}
+
 
 
 function Rotas(props) {
