@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import Stack from '@mui/material/Stack';
 
@@ -7,7 +7,7 @@ import Card from '../../components/card';
 
 import FormGroup from '../../components/form-group';
 
-import { mensagemSucesso, mensagemErro } from '../../components/toastr';
+//import { mensagemSucesso, mensagemErro } from '../../components/toastr';
 
 import '../../custom.css';
 
@@ -18,7 +18,7 @@ function CadastroCliente() {
 
   const { idParam } = useParams();
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const baseURL = `${BASE_URL}/cliente`;
 

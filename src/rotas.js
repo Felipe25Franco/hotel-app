@@ -25,7 +25,15 @@ import CadastroHospedagem from './views/cadastros/cadastro-hospedagem';
 import CadastroHorarioServico from './views/cadastros/subCadastros/cadastro-horarioServico';
 import CadastroAvaliacaoQuarto from './views/cadastros/subCadastros/cadastro-avaliacaoQuarto';
 import CadastroAvaliacaoHospedagem from './views/cadastros/subCadastros/cadastro-avaliacaoHospedagem';
-{/**/}
+
+
+import CadastroTipoProduto from './views/cadastros/subCadastros/cadastro-tipo-produto';
+import CadastroTipoServico from './views/cadastros/subCadastros/cadastro-tipo-servicos';
+import CadastroTipoQuarto from './views/cadastros/subCadastros/cadastro-tipo-quarto';
+import CadastroTipoCama from './views/cadastros/subCadastros/cadastro-tipo-cama';
+import CadastroTipoComodidade from './views/cadastros/subCadastros/cadastro-tipo-comodidade';
+import CadastroCargo from './views/cadastros/subCadastros/cadastro-cargo';
+
 
 
 function Rotas(props) {
@@ -56,14 +64,14 @@ function Rotas(props) {
         <Route path='/cadastro-avaliacaoQuarto/:idParam?' element={<CadastroAvaliacaoQuarto />} />   
         <Route path='/cadastro-avaliacaoHospedagem/:idParam?' element={<CadastroAvaliacaoHospedagem />} />   
         {/**/}
-        {/*          
+                
         <Route path='/cadastro-tipo-produto' element={<CadastroTipoProduto />} />     
         <Route path='/cadastro-tipo-servicos' element={<CadastroTipoServico/>} />  
         <Route path='/cadastro-tipo-quarto' element={<CadastroTipoQuarto />} />     
         <Route path='/cadastro-tipo-cama' element={<CadastroTipoCama />} />   
         <Route path='/cadastro-tipo-comodidade' element={<CadastroTipoComodidade />} />   
         <Route path='/cadastro-cargo' element={<CadastroCargo />} />                   
-        */}    
+          
       </Routes>
     </BrowserRouter>
   );
