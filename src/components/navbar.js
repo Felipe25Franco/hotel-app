@@ -1,5 +1,5 @@
 import React from 'react';
-//import 'bootswatch/dist/lumen/bootstrap.css';
+import 'bootswatch/dist/solar/bootstrap.css';
 
 import '../custom.css';
 
