@@ -1,5 +1,5 @@
 import React from 'react';
-import 'bootswatch/dist/solar/bootstrap.css';
+import 'bootswatch/dist/lumen/bootstrap.css';
 
 import '../custom.css';
 
@@ -8,7 +8,7 @@ import NavbarItem from './navbaritem';
 function Navbar(props) {
   return (
     <div className='navbar navbar-expand-lg fixed-top navbar-dark bg-primary'>
-      <div className='container'>
+      <div className='container-fluid'>
         <a href='/' className='navbar-brand'> REDE DE HOTEIS X </a>
         <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation'>
           <span className='navbar-toggler-icon'></span>
