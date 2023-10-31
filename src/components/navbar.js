@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootswatch/dist/lumen/bootstrap.css';
 
-import NavbarItem from './navbarItem';
+import NavbarItem from './navbaritem';
 
 function Navbar(props) {
   return (
