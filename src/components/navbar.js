@@ -52,7 +52,7 @@ function Navbar(props) {
             <NavbarItem render='true' href='/listagem-hospedagem' label='Hospedagens' />
           </ul>
           <ul class="nav-item-dropdown">
-          <a className={`nav-link dropdown-toggle ${isDropdownOpen ? 'show' : ''}`} onClick={toggleDropdown}>
+            <a className={`nav-link dropdown-toggle ${isDropdownOpen ? 'show' : ''}`} onClick={toggleDropdown}>
               Dropdown
             </a>
             <div className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`}>
