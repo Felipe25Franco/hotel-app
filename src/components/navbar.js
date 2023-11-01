@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootswatch/dist/lumen/bootstrap.css';
 
 import '../custom.css';
 
 import NavbarItem from './navbaritem';
 
+
+
 function Navbar(props) {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
   return (
     <div className='navbar navbar-expand-lg fixed-top navbar-dark bg-primary'>
       <div className='container-fluid'>
@@ -45,13 +52,15 @@ function Navbar(props) {
             <NavbarItem render='true' href='/listagem-hospedagem' label='Hospedagens' />
           </ul>
           <ul class="nav-item-dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" onclick="myFunction()">Dropdown</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
+          <a className={`nav-link dropdown-toggle ${isDropdownOpen ? 'show' : ''}`} onClick={toggleDropdown}>
+              Dropdown
+            </a>
+            <div className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`}>
+              <a className="dropdown-item" href="#">Action</a>
+              <a className="dropdown-item" href="#">Another action</a>
+              <a className="dropdown-item" href="#">Something else here</a>
+              <div className="dropdown-divider"></div>
+              <a className="dropdown-item" href="#">Separated link</a>
             </div>
           </ul>
            
