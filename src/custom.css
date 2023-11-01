@@ -13,4 +13,19 @@ pre {
     box-shadow: none;
   }
 }
+.nav-item-dropdown{
+  color: rgb(228, 231, 228);
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  padding-top: 23px;
+}
 
+.nav-item-dropdown:hover {
+  color: black;
+}
+
+.dropdown-menu{
+  display: block;
+  margin-top: 32px;
+}
